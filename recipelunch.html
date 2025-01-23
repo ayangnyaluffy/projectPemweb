@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Makan Siang</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #searchBar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <input
+            type="text"
+            id="searchBar"
+            class="form-control"
+            placeholder="Cari menu Makan Siang..."
+        />
+
+        <div class="row row-cols-1 row-cols-md-5 g-4" id="cardContainer">
+            <div class="col">
+                <div class="card h-100">
+                    <a href="makan siang/ayambakar.html">
+                    <img src="img/makansiang/ayambakar.jpg" class="card-img-top" alt="Bubur Ayam" style="width: 100%; height: 200px;">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ayam Bakar</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <a href="makan siang/ayambalado.html">
+                        <img src="img/makansiang/ayambalado.jpg" class="card-img-top" alt="Gudeg" style="width: 100%; height: 200px;">
+                    </a>
+                        <div class="card-body">
+                        <h5 class="card-title text-center">Ayam Balado</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <a href="makan siang/bakso.html">
+                    <img src="img/makansiang/bakso.jpg" class="card-img-top" alt="Ketoprak" style="width: 100%; height: 200px;">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Bakso</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <a href="makan siang/cahkangkung.html">
+                    <img src="img/makansiang/cahkangkung.jpg" class="card-img-top" alt="Nasi Uduk" style="width: 100%; height: 200px;">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Cah Kangkung</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                <a href="makan siang/ikantongkolbalado.html">
+                    <img src="img/makansiang/ikantongkolbalado.jpg" class="card-img-top" alt="Nasi Goreng" style="width: 100%; height: 200px;">
+                </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ikan tongkol balado</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <a href="makan siang/mieayam.html">
+                    <img src="img/makansiang/mieayam.jpg" class="card-img-top" alt="Nasi Kuning" style="width: 100%; height: 200px;">
+                </a>
+                  <div class="card-body">
+                      <h5 class="card-title text-center">Mie Ayam</h5>
+                  </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+               <a href="makan siang/pecelayam.html">
+                    <img src="img/makansiang/pecelayam.jpg" class="card-img-top" alt="Pecel" style="width: 100%; height: 200px;">
+               </a>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Pecel Ayam</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+               <a href="makan siang/sayurbayam.html">
+                    <img src="img/makansiang/sayurbayam.jpg" class="card-img-top" alt="Serabi" style="width: 100%; height: 200px;">
+               </a>
+              <div class="card-body">
+                  <h5 class="card-title text-center">Sayur Bayam</h5>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <a href="makan siang/sayurlodeh.html">
+                <img src="img/makansiang/sayurlodeh.jpg" class="card-img-top" alt="Soto" style="width: 100%; height: 200px;">
+            </a>
+              <div class="card-body">
+                  <h5 class="card-title text-center">Sayur lodeh</h5>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <a href="makan siang/terongbalado.html">
+                <img src="img/makansiang/terongbalado.jpg" class="card-img-top" alt="Tiwul" style="width: 100%; height: 200px;">
+            </a>
+              <div class="card-body">
+                  <h5 class="card-title text-center">Terong balado</h5>
+              </div>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+   
+    <script>
+      
+        const searchBar = document.getElementById("searchBar");
+        const cardContainer = document.getElementById("cardContainer");
+        const cards = cardContainer.getElementsByClassName("col");
+
+        searchBar.addEventListener("keyup", () => {
+            const searchText = searchBar.value.toLowerCase();
+
+            for (let card of cards) {
+                const cardTitle = card.querySelector(".card-title").textContent.toLowerCase();
+
+             
+                if (cardTitle.includes(searchText)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            }
+        }
+        );
+        document.getElementById('ayambakarImg').onclick = function() {
+            window.location.href = 'makansiang/ayambakar.html'; 
+        };
+        document.getElementById('ayambaladoImg').onclick = function() {
+            window.location.href = 'makansiang/ayambalado.html';
+        };
+        document.getElementById('baksoImg').onclick = function() {
+            window.location.href = 'makansiang/bakso.html';
+        };
+        document.getElementById('cahkangkungImg').onclick = function() {
+            window.location.href = 'makansiang/cahkangkung.html'; 
+        };
+        document.getElementById('ikantongkolbaladoImg').onclick = function() {
+            window.location.href = 'makansiang/ikantongkolbalado.html';
+        };
+        document.getElementById('mieayamImg').onclick = function() {
+            window.location.href = 'makansiang/mieayam.html';
+        };
+        document.getElementById('pecelayamImg').onclick = function() {
+            window.location.href = 'makansiang/pecelayam.html'; 
+        };
+        document.getElementById('sayurbayamImg').onclick = function() {
+            window.location.href = 'makansiang/sayurbayam.html';
+        };
+        document.getElementById('sayurlodehImg').onclick = function() {
+            window.location.href = 'makansiang/sayurlodeh.html';
+        };
+        document.getElementById('terogbaladoImg').onclick = function() {
+            window.location.href = 'makansiang/terongbalado.html'; 
+        };
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>
